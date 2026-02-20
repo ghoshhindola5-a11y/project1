@@ -1,20 +1,54 @@
+
 # 📊 Survey Chatbot Backend
 
-A FastAPI-based backend system for an intelligent survey chatbot that collects customer insights using compressed questionnaire data.
+## 📌 1. Project Overview
+
+The Survey Chatbot Backend is a FastAPI-based system designed to collect and process customer feedback through an intelligent questionnaire-driven chatbot.
+
+The system uses compressed survey logic and response tracking to improve engagement and data collection efficiency.
 
 ---
 
-## 🚀 Features
-- Interactive chatbot API
-- Survey response handling
-- SQLite database integration
-- Modular project structure
-- Docker support
+## 🎯 2. Problem Statement
+
+Traditional survey systems suffer from:
+- Low engagement rates
+- Repetitive questionnaires
+- Poor response tracking
+
+This project aims to build an API-driven chatbot system that dynamically handles survey responses and stores analytics efficiently.
 
 ---
 
-## 🛠️ Tech Stack
-- Python
+## 🎯 3. Objectives
+
+- Build a RESTful chatbot API
+- Store survey responses in database
+- Compress questionnaire logic
+- Provide analytics endpoint
+- Enable Docker deployment
+
+---
+
+## 🏗️ 4. System Architecture
+
+Client (Frontend)
+        ↓
+FastAPI Backend
+        ↓
+SQLite Database
+
+The backend handles:
+- Session-based chat
+- Question flow management
+- Response storage
+- Analytics generation
+
+---
+
+## 🛠️ 5. Technology Stack
+
+- Python 3.x
 - FastAPI
 - SQLite
 - Uvicorn
@@ -22,40 +56,85 @@ A FastAPI-based backend system for an intelligent survey chatbot that collects c
 
 ---
 
-## ⚙️ Installation
+## 📂 6. Project Structure
 
-1. Clone the repository:
+app/
+ ├── main.py
+ ├── models.py
+ ├── schemas.py
+ ├── database.py
+ ├── survey_engine.py
+ ├── routes/
+ ├── utils/
 
-git clone https://github.com/ghoshhindola5-a11y/project1.git
-
-2. Go to project folder:
-
-cd project1
-
-3. Create virtual environment:
-
-python -m venv venv  
-venv\Scripts\activate
-
-4. Install dependencies:
-
-pip install -r requirement.txt
-
-5. Run server:
-
-uvicorn app.main:app --reload
-
-Server runs at: http://127.0.0.1:8000
+dockerfile  
+requirement.txt  
 
 ---
 
-## 📌 API Endpoints
-- /api/chat/{session_id}
-- /api/analytics
-- /docs (Swagger UI)
+## ⚙️ 7. Installation Guide
+
+### Clone Repository
+
+git clone https://github.com/ghoshhindola5-a11y/project1.git  
+cd project1  
+
+### Create Virtual Environment
+
+python -m venv venv  
+venv\Scripts\activate  
+
+### Install Dependencies
+
+pip install -r requirement.txt  
+
+### Run Server
+
+uvicorn app.main:app --reload  
+
+Server URL: http://127.0.0.1:8000  
+
+---
+
+## 🔌 8. API Endpoints
+
+### Chat Endpoint
+POST /api/chat/{session_id}
+
+Handles chatbot interaction per user session.
+
+### Analytics Endpoint
+GET /api/analytics
+
+Returns survey response statistics.
+
+### Swagger Documentation
+/docs
+
+---
+
+## 🗄️ 9. Database Design
+
+- SQLite database (survey.db)
+- Stores:
+  - Session ID
+  - Questions
+  - User Responses
+  - Timestamps
+
+---
+
+## 🚀 10. Future Enhancements
+
+- AI-based dynamic question selection
+- JWT Authentication
+- PostgreSQL integration
+- Cloud deployment
+- Admin dashboard
 
 ---
 
 ## 👩‍💻 Author
+
 Hindola Ghosh  
 GitHub: https://github.com/ghoshhindola5-a11y
